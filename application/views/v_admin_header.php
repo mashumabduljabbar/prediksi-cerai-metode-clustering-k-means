@@ -28,12 +28,28 @@
   $geturl2 = $this->uri->segment(2);
   $beranda = "";
   $user = "";
+  $alasan = "";
+  $usia = "";
+  $umurperkawinan = "";
+  $dataset = "";
   
   if($geturl1=="admin" && ($geturl2=="" or strpos($geturl2, "index")!== FALSE)){
 	  $beranda = "active";
   }
   if(strpos($geturl1, "user")!== FALSE){
 	  $user = "active";
+  }
+  if(strpos($geturl1, "alasan")!== FALSE){
+	  $alasan = "active";
+  }
+  if(strpos($geturl1, "usia")!== FALSE){
+	  $usia = "active";
+  }
+  if(strpos($geturl1, "umurperkawinan")!== FALSE){
+	  $umurperkawinan = "active";
+  }
+  if(strpos($geturl1, "dataset")!== FALSE){
+	  $dataset = "active";
   }
 ?>
 <div id="layoutSidenav">
@@ -47,6 +63,22 @@
 							<a class="nav-link <?php echo $user;?>" href="<?php echo base_url(); ?>user"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                 User</a>
+							<!--
+							
+							<a class="nav-link <?php echo $alasan;?>" href="<?php echo base_url(); ?>alasan"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
+                                Alasan</a>
+							<a class="nav-link <?php echo $usia;?>" href="<?php echo base_url(); ?>usia"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
+                                Usia</a>
+							<a class="nav-link <?php echo $umurperkawinan;?>" href="<?php echo base_url(); ?>umurperkawinan"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
+                                Umur Perkawinan</a>
+								
+							-->	
+							<a class="nav-link <?php echo $dataset;?>" href="<?php echo base_url(); ?>dataset"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Dataset</a>
 							<a class="nav-link <?php echo $user;?>" href="<?php echo base_url(); ?>login/logout"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
                                 Logout</a>
