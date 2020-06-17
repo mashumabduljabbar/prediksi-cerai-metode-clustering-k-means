@@ -58,13 +58,13 @@ $('#dataDataset').DataTable({
 			"ajax": "<?php echo base_url('dataset/get_data_master_dataset/');?>" ,
 			"columns": [
 				{ "data": "np_dataset" },
-				{ "data": "jenis_dataset" },
-				{ "data": "up_dataset" },
-				{ "data": "ut_dataset" },
-				{ "data": "uk_dataset" },
-				{ "data": "ja_dataset" },
+				{ "data": "jenisdataset" },
+				{ "data": "updataset" },
+				{ "data": "utdataset" },
+				{ "data": "ukdataset" },
+				{ "data": "jadataset" },
 				{ "data": "mediasi_dataset" },
-				{ "data": "alasan_dataset" },
+				{ "data": "alasandataset" },
 				{ "data": "putusan_dataset" }
 			],
 			columnDefs: [

@@ -13,6 +13,7 @@
 					if($_POST['np_dataset_eksis']==1){
 							$np_dataset = $_POST['np_dataset'];
 							$jenis_dataset = $_POST['jenis_dataset'];
+							$jenis_dataset2 = $_POST['jenis_dataset'];
 							$up_dataset = $_POST['up_dataset'];
 							$ut_dataset = $_POST['ut_dataset'];
 							$uk_dataset = $_POST['uk_dataset'];
@@ -28,6 +29,7 @@
 					}else{
 							$np_dataset = "";
 							$jenis_dataset = "";
+							$jenis_dataset2 = "Pilih Jenis";
 							$up_dataset = "";
 							$ut_dataset = "";
 							$uk_dataset = "";
@@ -39,7 +41,7 @@
 							$putusan_dataset2 = "Pilih Putusan";
 					}?>
 					
-				  <?php echo form_open_multipart("dataset/dataset_aksi_tambah"); ?>
+				  <form id="frm-example" action="<?php echo base_url("dataset/dataset_aksi_tambah");?>" method="post" enctype="multipart/form-data">
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>	NP</label>
@@ -49,7 +51,11 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>	Jenis</label>
-							<input type="text" class="form-control" name="jenis_dataset" placeholder="Jenis" value="<?php echo $jenis_dataset;?>" required>
+							<select class="form-control" name="jenis_dataset" required>
+								<option value="<?php echo $jenis_dataset;?>"><?php echo $jenis_dataset2;?></option>
+								<option value="CG">Cerai Gugat</option>
+								<option value="CT">Cerai Talak</option>
+							</select>
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -86,10 +92,31 @@
 							</select>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<div class="form-group">
 							<label>	Alasan</label>
-							<input type="text" class="form-control" name="alasan_dataset" placeholder="Alasan" value="<?php echo $alasan_dataset;?>" required>
+							<table id="example" class="table table-bordered table-striped">
+									<tr>
+										<th>Kode</th>
+										<th>Detail Alasan</th>
+										<th>Action</th>
+									</tr>
+								<?php 
+								$tbl_alasan = $this->db->query("select * from tbl_alasan")->result();
+								foreach($tbl_alasan as $alasan){ ?>
+									<tr>
+										<td><?php echo $alasan->kd_alasan;?></td>
+										<td><?php echo $alasan->detail_alasan;?></td>
+										<td>
+											<label class="checkbox-inline">
+												<input type="hidden" name="id[]" value="0" id="id<?php echo $alasan->kd_alasan;?>">
+												<input type="checkbox" id="<?php echo $alasan->kd_alasan;?>">
+												<input type="hidden" name="kd_alasan[]" value="<?php echo $alasan->kd_alasan;?>">
+											</label>
+										</td>
+									</tr>
+								<?php } ?>
+							</table>
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -104,12 +131,33 @@
 					</div>
 					<div class="col-md-6">
 					  <div class="form-group">
-						<input type="submit" onclick="return confirm('Apakah Yakin Menyimpan?');" value="Submit" class="btn btn-success">
+						<input type="button" onclick="goSave();" value="Submit" class="btn btn-success" >
 					  </div>
 					</div>
-					<?php echo form_close(); ?>
+					</form>
 				  
                             </div>
                         </div>
                     </div>
                 </main>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script>
+	function goSave() {
+		var r = confirm('Yakin untuk Menyimpan?');
+			if (r == true) {			
+				var form = this;
+				  $('#example input[type="checkbox"]').each(function(){
+					 if(this.checked){
+						document.getElementById("id"+this.id).value = "1";
+					 }else{
+						document.getElementById("id"+this.id).value = "0";
+					 }
+				  });
+				document.getElementById('frm-example').submit();
+			}else{
+				return false;						
+			}
+	}
+</script>

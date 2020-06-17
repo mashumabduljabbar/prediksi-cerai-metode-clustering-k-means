@@ -47,7 +47,19 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>	Jenis</label>
-							<input type="text" class="form-control" name="jenis_dataset" placeholder="Jenis" value="<?php echo $jenis_dataset;?>" required>
+							<select class="form-control" name="jenis_dataset" required>
+								<option value="<?php echo $jenis_dataset;?>">
+								<?php 
+								if($jenis_dataset=="CG"){
+									echo "Cerai Gugat";
+								}else{
+									echo "Cerai Talak";
+								}
+								?>
+								</option>
+								<option value="CG">Cerai Gugat</option>
+								<option value="CT">Cerai Talak</option>
+							</select>
 						</div>
 					</div>
 					<div class="col-md-6">
