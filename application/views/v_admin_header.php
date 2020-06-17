@@ -32,6 +32,7 @@
   $usia = "";
   $umurperkawinan = "";
   $dataset = "";
+  $clustering = "";
   
   if($geturl1=="admin" && ($geturl2=="" or strpos($geturl2, "index")!== FALSE)){
 	  $beranda = "active";
@@ -50,6 +51,9 @@
   }
   if(strpos($geturl1, "dataset")!== FALSE){
 	  $dataset = "active";
+  }
+  if(strpos($geturl1, "clustering")!== FALSE){
+	  $clustering = "active";
   }
 ?>
 <div id="layoutSidenav">
@@ -79,6 +83,9 @@
 							<a class="nav-link <?php echo $dataset;?>" href="<?php echo base_url(); ?>dataset"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Dataset</a>
+							<a class="nav-link <?php echo $clustering;?>" href="<?php echo base_url(); ?>clustering"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Clustering</a>
 							<a class="nav-link <?php echo $user;?>" href="<?php echo base_url(); ?>login/logout"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
                                 Logout</a>
