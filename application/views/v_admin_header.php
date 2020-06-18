@@ -67,8 +67,6 @@
 							<a class="nav-link <?php echo $user;?>" href="<?php echo base_url(); ?>user"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                 User</a>
-							<!--
-							
 							<a class="nav-link <?php echo $alasan;?>" href="<?php echo base_url(); ?>alasan"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
                                 Alasan</a>
@@ -78,8 +76,6 @@
 							<a class="nav-link <?php echo $umurperkawinan;?>" href="<?php echo base_url(); ?>umurperkawinan"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
                                 Umur Perkawinan</a>
-								
-							-->	
 							<a class="nav-link <?php echo $dataset;?>" href="<?php echo base_url(); ?>dataset"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Dataset</a>
