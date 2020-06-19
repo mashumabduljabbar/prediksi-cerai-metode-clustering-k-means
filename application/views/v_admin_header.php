@@ -31,6 +31,7 @@
   $alasan = "";
   $usia = "";
   $umurperkawinan = "";
+  $config = "";
   $dataset = "";
   $clustering = "";
   
@@ -48,6 +49,9 @@
   }
   if(strpos($geturl1, "umurperkawinan")!== FALSE){
 	  $umurperkawinan = "active";
+  }
+  if(strpos($geturl1, "config")!== FALSE){
+	  $config = "active";
   }
   if(strpos($geturl1, "dataset")!== FALSE){
 	  $dataset = "active";
@@ -76,13 +80,16 @@
 							<a class="nav-link <?php echo $umurperkawinan;?>" href="<?php echo base_url(); ?>umurperkawinan"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
                                 Umur Perkawinan</a>
+							<a class="nav-link <?php echo $config;?>" href="<?php echo base_url(); ?>config"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
+                                Configuration</a>
 							<a class="nav-link <?php echo $dataset;?>" href="<?php echo base_url(); ?>dataset"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Dataset</a>
 							<a class="nav-link <?php echo $clustering;?>" href="<?php echo base_url(); ?>clustering"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Clustering</a>
-							<a class="nav-link <?php echo $user;?>" href="<?php echo base_url(); ?>login/logout"
+							<a class="nav-link" href="<?php echo base_url(); ?>login/logout"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
                                 Logout</a>
                         </div>

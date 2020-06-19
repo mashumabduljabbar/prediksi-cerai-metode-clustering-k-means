@@ -27,13 +27,13 @@
   $geturl1 = $this->uri->segment(1);
   $geturl2 = $this->uri->segment(2);
   $beranda = "";
-  $user = "";
+  $clustering = "";
   
   if($geturl1=="admin" && ($geturl2=="" or strpos($geturl2, "index")!== FALSE)){
 	  $beranda = "active";
   }
-  if(strpos($geturl1, "user")!== FALSE){
-	  $user = "active";
+  if(strpos($geturl1, "clustering")!== FALSE){
+	  $clustering = "active";
   }
 ?>
 <div id="layoutSidenav">
@@ -41,13 +41,13 @@
                 <nav class="sb-sidenav accordion sb-sidenav-light " id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link <?php echo $beranda;?>" href="<?php echo base_url(); ?>admin"
+                            <a class="nav-link <?php echo $beranda;?>" href="<?php echo base_url(); ?>pengguna"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                                 Beranda</a>
-							<a class="nav-link <?php echo $user;?>" href="<?php echo base_url(); ?>user"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                                User</a>
-							<a class="nav-link <?php echo $user;?>" href="<?php echo base_url(); ?>login/logout"
+							<a class="nav-link <?php echo $clustering;?>" href="<?php echo base_url(); ?>clustering"
+                                ><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Clustering</a>
+							<a class="nav-link" href="<?php echo base_url(); ?>login/logout"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
                                 Logout</a>
                         </div>

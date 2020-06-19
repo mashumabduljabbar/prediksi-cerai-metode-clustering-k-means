@@ -2,7 +2,7 @@
                     <div class="container-fluid">
                         <h1 class="mt-4"></h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dataset Clustering</li>
+                            <li class="breadcrumb-item active">Dataset Clustering <br>- Jumlah Cluster 0 : <?php echo $c0;?> <br>- Jumlah Cluster 1 : <?php echo $c1;?></li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
@@ -37,7 +37,7 @@
 <script>
 $(document).ready(function() {
 $('#dataDataset').DataTable({
-			"ajax": "<?php echo base_url('dataset/get_data_master_dataset_clustering/');?>" ,
+			"ajax": "<?php echo base_url('clustering/get_data_master_dataset_clustering/');?>" ,
 			"ordering": false,
 			"columns": [
 				{ "data": "np_dataset" },

@@ -1,3 +1,4 @@
+<?php error_reporting(0);?>
 <style>
 .center{
 	vertical-align:middle;
@@ -12,6 +13,7 @@
                         </ol>
 
                                     <?php
+									$tbl_config = $this->db->query("select * from tbl_config where id_config>=0")->row();
 									$tbl_dataset = $this->db->query("select
 a.id_dataset,									
 CASE
@@ -33,20 +35,28 @@ a.ja_dataset,
 CHAR_LENGTH(a.alasan_dataset) as alasan_dataset
 from tbl_dataset a 
 order by a.id_dataset ASC
-LIMIT 300
+LIMIT $tbl_config->limit_dataset
 ")->result();
 									
-$centroid1_1 = 2;									
-$centroid1_2 = 1;									
-$centroid1_3 = 1;									
-$centroid1_4 = 1;									
-$centroid1_5 = 1;
+$centroid1_1 = $tbl_config->centroid1_1;									
+$centroid1_2 = $tbl_config->centroid1_2;									
+$centroid1_3 = $tbl_config->centroid1_3;									
+$centroid1_4 = $tbl_config->centroid1_4;									
+$centroid1_5 = $tbl_config->centroid1_5;
 					
-$centroid2_1 = 3;									
-$centroid2_2 = 2;									
-$centroid2_3 = 2;									
-$centroid2_4 = 3;									
-$centroid2_5 = 1;	
+$centroid2_1 = $tbl_config->centroid2_1;									
+$centroid2_2 = $tbl_config->centroid2_2;									
+$centroid2_3 = $tbl_config->centroid2_3;									
+$centroid2_4 = $tbl_config->centroid2_4;									
+$centroid2_5 = $tbl_config->centroid2_5;	
+
+if($tbl_config->tampilkan_semua_iterasi=="0"){
+	$iterasi_display = "display:none;";
+	$iterasi_akhir = "";
+}else{
+	$iterasi_display = "";
+	$iterasi_akhir = "display:none;";
+}
 
 $n = 0;
 $no[$n] = 1;								
@@ -136,7 +146,7 @@ $count_a[$n]=0; $count_b[$n]=0; $count_c[$n]=0; $count_d[$n]=0;  $count_e[$n]=0;
 $count_g[$n]=0; $count_h[$n]=0; $count_i[$n]=0; $count_j[$n]=0;  $count_k[$n]=0; 
 $no[$n] = 1;								
 ?>	
-						<div class="card mb-4" style="display:none;">
+						<div class="card mb-4" style="<?php echo $iterasi_display;?>">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Iterasi -<?php echo $n;?></div>
 							<div class="card-body">
 											<table class="table table-bordered small" id="interasi<?php echo $n;?>" width="100%" cellspacing="0">
@@ -260,8 +270,8 @@ $no[$n] = 1;
 										</table>
 									</div>
 								</div>
-								<div class="card mb-4" style="display:none;">
-									<div class="card-header"><i class="fas fa-table mr-1"></i>Iterasi -<?php echo $n;?></div>
+								<div class="card mb-4" style="<?php echo $iterasi_display;?>">
+									<div class="card-header"><i class="fas fa-table mr-1"></i>Cluster -<?php echo $n;?></div>
 										<div class="card-body">
 											<table class="table table-bordered small" id="data<?php echo $n;?>" width="100%" cellspacing="0">
 												<thead>
@@ -339,9 +349,9 @@ foreach($tbl_dataset as $dataset){
 							</div>
 						</div>
 <?php 
-$n=$nilai_x_terakhir-1;
+for($n=$nilai_x_terakhir-1; $n<=$nilai_x_terakhir; $n++){
 ?>						
-						<div class="card mb-4">
+						<div class="card mb-4" style="<?php echo $iterasi_akhir;?>">
 									<div class="card-header"><i class="fas fa-table mr-1"></i>Iterasi -<?php echo $n;?></div>
 										<div class="card-body">
 											<table class="table table-bordered small" id="dataakhir<?php echo $n;?>" width="100%" cellspacing="0">
@@ -399,13 +409,15 @@ if($c0[$n][$dataset->id_dataset]<$c1[$n][$dataset->id_dataset]){
 										</div>
 							</div>
 <?php 
+}
+
 $n=$nilai_x_terakhir;
 ?>	
-<?php echo form_open_multipart("dataset/dataset_aksi_ubah_bulk"); ?>				
-						<div class="card mb-4">
-									<div class="card-header"><i class="fas fa-table mr-1"></i>Iterasi -<?php echo $n;?></div>
-										<div class="card-body">
-											<table class="table table-bordered small" id="dataakhir<?php echo $n;?>" width="100%" cellspacing="0">
+<?php echo form_open_multipart("clustering/dataset_aksi_ubah_bulk"); ?>				
+						<div class="card mb-4" >
+									<div class="card-header" style="display:none;"><i class="fas fa-table mr-1"></i>Iterasi -<?php echo $n;?></div>
+										<div class="card-body" style="display:none;">
+											<table class="table table-bordered small" width="100%" cellspacing="0">
 												<thead>
 													<tr>
 														<th style="text-align:center;">Data ke-i</th>
@@ -462,7 +474,7 @@ if($c0[$n][$dataset->id_dataset]<$c1[$n][$dataset->id_dataset]){
 											</table>
 										</div>
 										<div class="col-md-6">
-									  <div class="form-group">
+											<div class="form-group">
 										<input type="submit" onclick="return confirm('Apakah Yakin untuk Lanjut?');" value="Lihat Dataset" class="btn btn-success">
 									  </div>
 									</div>

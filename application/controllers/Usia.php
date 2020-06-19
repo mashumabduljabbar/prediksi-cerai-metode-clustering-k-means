@@ -4,7 +4,7 @@ include APPPATH . 'third_party/ssp.php';
 class Usia extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		if($this->session->userdata('status') != "login"){
+		if($this->session->userdata('status') != "login" and $this->session->userdata('lv_user') != "admin"){
 			redirect(base_url("login"));
 		}
 		date_default_timezone_set("Asia/Bangkok");
