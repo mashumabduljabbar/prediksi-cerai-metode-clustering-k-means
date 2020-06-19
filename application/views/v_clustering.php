@@ -34,8 +34,8 @@ END as uk_dataset,
 a.ja_dataset,
 CHAR_LENGTH(a.alasan_dataset) as alasan_dataset
 from tbl_dataset a 
+WHERE id_dataset BETWEEN $tbl_config->dataset_awal AND $tbl_config->dataset_akhir
 order by a.id_dataset ASC
-LIMIT $tbl_config->limit_dataset
 ")->result();
 									
 $centroid1_1 = $tbl_config->centroid1_1;									
@@ -74,8 +74,8 @@ $no[$n] = 1;
                                                 <th style="text-align:center;">UK</th>
                                                 <th style="text-align:center;">JA</th>
                                                 <th style="text-align:center;">Alasan</th>
-                                                <th style="text-align:center;">Centroid 1</th>
-                                                <th style="text-align:center;">Centroid 2</th>
+                                                <th style="text-align:center;">c0</th>
+                                                <th style="text-align:center;">c1</th>
                                                 <th style="text-align:center;" >Cluster</th>
                                             </tr>
                                         </thead>
@@ -277,8 +277,8 @@ $no[$n] = 1;
 												<thead>
 													<tr>
 														<th style="text-align:center;">Data ke-i</th>
-														<th style="text-align:center;">Centroid 1</th>
-														<th style="text-align:center;">Centroid 2</th>
+														<th style="text-align:center;">c0</th>
+														<th style="text-align:center;">c1</th>
 														<th style="text-align:center;">Cluster</th>
 													</tr>
 												</thead>
@@ -358,8 +358,8 @@ for($n=$nilai_x_terakhir-1; $n<=$nilai_x_terakhir; $n++){
 												<thead>
 													<tr>
 														<th style="text-align:center;">Data ke-i</th>
-														<th style="text-align:center;">Centroid 1</th>
-														<th style="text-align:center;">Centroid 2</th>
+														<th style="text-align:center;">c0</th>
+														<th style="text-align:center;">c1</th>
 														<th style="text-align:center;">Cluster</th>
 													</tr>
 												</thead>
@@ -421,8 +421,8 @@ $n=$nilai_x_terakhir;
 												<thead>
 													<tr>
 														<th style="text-align:center;">Data ke-i</th>
-														<th style="text-align:center;">Centroid 1</th>
-														<th style="text-align:center;">Centroid 2</th>
+														<th style="text-align:center;">c0</th>
+														<th style="text-align:center;">c1</th>
 														<th style="text-align:center;">Cluster</th>
 													</tr>
 												</thead>

@@ -48,7 +48,8 @@ INSERT INTO `tbl_alasan` (`id_alasan`, `kd_alasan`, `detail_alasan`) VALUES
 -- Dumping structure for table db_prediksicerai.tbl_config
 CREATE TABLE IF NOT EXISTS `tbl_config` (
   `id_config` int(11) NOT NULL DEFAULT 1,
-  `limit_dataset` int(11) DEFAULT 0,
+  `dataset_awal` int(11) DEFAULT 0,
+  `dataset_akhir` int(11) DEFAULT 0,
   `tampilkan_semua_iterasi` int(11) DEFAULT 0,
   `centroid1_1` int(11) DEFAULT 0,
   `centroid1_2` int(11) DEFAULT 0,
@@ -65,8 +66,8 @@ CREATE TABLE IF NOT EXISTS `tbl_config` (
 
 -- Dumping data for table db_prediksicerai.tbl_config: ~1 rows (approximately)
 /*!40000 ALTER TABLE `tbl_config` DISABLE KEYS */;
-INSERT INTO `tbl_config` (`id_config`, `limit_dataset`, `tampilkan_semua_iterasi`, `centroid1_1`, `centroid1_2`, `centroid1_3`, `centroid1_4`, `centroid1_5`, `centroid2_1`, `centroid2_2`, `centroid2_3`, `centroid2_4`, `centroid2_5`) VALUES
-	(1, 50, 0, 2, 1, 1, 1, 1, 3, 2, 2, 3, 1);
+INSERT INTO `tbl_config` (`id_config`, `dataset_awal`, `dataset_akhir`, `tampilkan_semua_iterasi`, `centroid1_1`, `centroid1_2`, `centroid1_3`, `centroid1_4`, `centroid1_5`, `centroid2_1`, `centroid2_2`, `centroid2_3`, `centroid2_4`, `centroid2_5`) VALUES
+	(1, 5255, 5352, 1, 2, 1, 1, 1, 1, 3, 2, 2, 3, 1);
 /*!40000 ALTER TABLE `tbl_config` ENABLE KEYS */;
 
 
@@ -90,105 +91,105 @@ CREATE TABLE IF NOT EXISTS `tbl_dataset` (
 -- Dumping data for table db_prediksicerai.tbl_dataset: ~5,425 rows (approximately)
 /*!40000 ALTER TABLE `tbl_dataset` DISABLE KEYS */;
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(1, '0182/Pdt.G/2015/PA.Pbr', 'CG', 35, 37, 10, 1, 'Gagal', 'AFGH', 'Dikabulkan', 0, 1);
+	(1, '0182/Pdt.G/2015/PA.Pbr', 'CG', 35, 37, 10, 1, 'Gagal', 'AFGH', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(2, '0183/Pdt.G/2015/PA Pbr', 'CG', 40, 42, 13, 3, 'Gagal', 'ABCDE', 'Dikabulkan', 1, 1);
+	(2, '0183/Pdt.G/2015/PA Pbr', 'CG', 40, 42, 13, 3, 'Gagal', 'ABCDE', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(3, '0186/Pdt.G/2015/PA.Pbr', 'CG', 39, 39, 10, 1, 'Gagal', 'ABCDF', 'Dikabulkan', 0, 1);
+	(3, '0186/Pdt.G/2015/PA.Pbr', 'CG', 39, 39, 10, 1, 'Gagal', 'ABCDF', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(4, '0205/Pdt.G/2015/PA Pbr', 'CG', 37, 39, 10, 1, 'Gagal', 'ABCDG', 'Dikabulkan', 0, 1);
+	(4, '0205/Pdt.G/2015/PA Pbr', 'CG', 37, 39, 10, 1, 'Gagal', 'ABCDG', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5, '0213/Pdt.G/2015/PA.Pbr', 'CG', 39, 35, 5, 0, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(5, '0213/Pdt.G/2015/PA.Pbr', 'CG', 39, 35, 5, 0, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(6, '0215/Pdt.G/2015/PA.Pbr', 'CG', 41, 46, 21, 2, 'Gagal', 'G', 'Dikabulkan', 1, 1);
+	(6, '0215/Pdt.G/2015/PA.Pbr', 'CG', 41, 46, 21, 2, 'Gagal', 'G', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(7, '0216/Pdt.G/2015/PA.Pbr', 'CG', 29, 30, 4, 1, 'Gagal', 'BF', 'Dikabulkan', 0, 1);
+	(7, '0216/Pdt.G/2015/PA.Pbr', 'CG', 29, 30, 4, 1, 'Gagal', 'BF', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(8, '0390/Pdt.G/2015/PA.Pbr', 'CG', 32, 32, 7, 3, 'Gagal', 'F', 'Dikabulkan', 1, 1);
+	(8, '0390/Pdt.G/2015/PA.Pbr', 'CG', 32, 32, 7, 3, 'Gagal', 'F', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(9, '0391/Pdt.G/2015/PA.Pbr', 'CG', 41, 48, 25, 3, 'Gagal', 'F', 'Dikabulkan', 1, 1);
+	(9, '0391/Pdt.G/2015/PA.Pbr', 'CG', 41, 48, 25, 3, 'Gagal', 'F', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(10, '0392/Pdt.G/2015/PA.Pbr', 'CG', 41, 47, 21, 3, 'Gagal', 'FH', 'Dikabulkan', 1, 1);
+	(10, '0392/Pdt.G/2015/PA.Pbr', 'CG', 41, 47, 21, 3, 'Gagal', 'FH', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(11, '0393/Pdt.G/2015/PA.Pbr', 'CG', 33, 37, 14, 2, 'Gagal', 'G', 'Dikabulkan', 1, 1);
+	(11, '0393/Pdt.G/2015/PA.Pbr', 'CG', 33, 37, 14, 2, 'Gagal', 'G', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(12, '0394/Pdt.G/2015/PA.Pbr', 'CG', 35, 44, 14, 2, 'Gagal', 'G', 'Dikabulkan', 1, 1);
+	(12, '0394/Pdt.G/2015/PA.Pbr', 'CG', 35, 44, 14, 2, 'Gagal', 'G', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(13, '0395/Pdt.G/2015/PA.Pbr', 'CG', 27, 26, 5, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
+	(13, '0395/Pdt.G/2015/PA.Pbr', 'CG', 27, 26, 5, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(14, '0464/Pdt.G/2015/PA.Pbr', 'CG', 28, 34, 7, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(14, '0464/Pdt.G/2015/PA.Pbr', 'CG', 28, 34, 7, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(15, '0469/Pdt.G/2015/PA.Pbr', 'CG', 33, 37, 5, 1, 'Berhasil', 'G', 'Ditolak', 0, 1);
+	(15, '0469/Pdt.G/2015/PA.Pbr', 'CG', 33, 37, 5, 1, 'Berhasil', 'G', 'Ditolak', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(16, '0577/Pdt.G/2015/PA.Pbr', 'CG', 32, 31, 8, 2, 'Gagal', 'F', 'Dikabulkan', 0, 1);
+	(16, '0577/Pdt.G/2015/PA.Pbr', 'CG', 32, 31, 8, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(17, '0579/Pdt.G/2015/PA.Pbr', 'CG', 27, 28, 4, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
+	(17, '0579/Pdt.G/2015/PA.Pbr', 'CG', 27, 28, 4, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(18, '0603/Pdt.G/2015/PA.Pbr', 'CG', 28, 41, 8, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(18, '0603/Pdt.G/2015/PA.Pbr', 'CG', 28, 41, 8, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(19, '0613/Pdt.G/2015/PA.Pbr', 'CG', 51, 56, 33, 5, 'Gagal', 'F', 'Dikabulkan', 1, 1);
+	(19, '0613/Pdt.G/2015/PA.Pbr', 'CG', 51, 56, 33, 5, 'Gagal', 'F', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(20, '0627/Pdt.G/2015/PA.Pbr', 'CG', 40, 41, 16, 2, 'Gagal', 'G', 'Dikabulkan', 1, 1);
+	(20, '0627/Pdt.G/2015/PA.Pbr', 'CG', 40, 41, 16, 2, 'Gagal', 'G', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(21, '0632/Pdt.G/2015/PA.Pbr', 'CG', 34, 36, 13, 2, 'Gagal', 'AG', 'Dikabulkan', 0, 1);
+	(21, '0632/Pdt.G/2015/PA.Pbr', 'CG', 34, 36, 13, 2, 'Gagal', 'AG', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(22, '0635/Pdt.G/2015/PA.Pbr', 'CG', 40, 41, 12, 1, 'Gagal', 'BF', 'Dikabulkan', 0, 1);
+	(22, '0635/Pdt.G/2015/PA.Pbr', 'CG', 40, 41, 12, 1, 'Gagal', 'BF', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(23, '0643/Pdt.G/2015/PA.Pbr', 'CG', 30, 31, 1, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
+	(23, '0643/Pdt.G/2015/PA.Pbr', 'CG', 30, 31, 1, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(24, '0732/Pdt.G/2015/PA.Pbr', 'CG', 30, 30, 9, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
+	(24, '0732/Pdt.G/2015/PA.Pbr', 'CG', 30, 30, 9, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(25, '0736/Pdt.G/2015/PA.Pbr', 'CG', 41, 41, 21, 3, 'Gagal', 'F', 'Dikabulkan', 1, 1);
+	(25, '0736/Pdt.G/2015/PA.Pbr', 'CG', 41, 41, 21, 3, 'Gagal', 'F', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(26, '0783/Pdt.G/2015/PA.Pbr', 'CG', 27, 30, 4, 0, 'Gagal', 'F', 'Dikabulkan', 0, 1);
+	(26, '0783/Pdt.G/2015/PA.Pbr', 'CG', 27, 30, 4, 0, 'Gagal', 'F', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(27, '0822/Pdt.G/2015/PA.Pbr', 'CG', 24, 27, 4, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
+	(27, '0822/Pdt.G/2015/PA.Pbr', 'CG', 24, 27, 4, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(28, '0834/Pdt.G/2015/PA.Pbr', 'CG', 30, 36, 8, 2, 'Gagal', 'FG', 'Dikabulkan', 0, 1);
+	(28, '0834/Pdt.G/2015/PA.Pbr', 'CG', 30, 36, 8, 2, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(29, '0844/Pdt.G/2015/PA.Pbr', 'CG', 25, 29, 6, 2, 'Gagal', 'F', 'Dikabulkan', 0, 1);
+	(29, '0844/Pdt.G/2015/PA.Pbr', 'CG', 25, 29, 6, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(30, '0855/Pdt.G/2015/PA.Pbr', 'CG', 27, 26, 4, 0, 'Gagal', 'FG', 'Dikabulkan', 0, 1);
+	(30, '0855/Pdt.G/2015/PA.Pbr', 'CG', 27, 26, 4, 0, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(31, '0892/Pdt.G/2015/PA.Pbr', 'CG', 31, 33, 4, 1, 'Berhasil', 'ABFH', 'Dikabulkan', 0, 1);
+	(31, '0892/Pdt.G/2015/PA.Pbr', 'CG', 31, 33, 4, 1, 'Berhasil', 'ABFH', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(32, '0908/PdtG/2015/PA.Pbr', 'CG', 41, 44, 20, 4, 'Gagal', 'G', 'Dikabulkan', 1, 1);
+	(32, '0908/PdtG/2015/PA.Pbr', 'CG', 41, 44, 20, 4, 'Gagal', 'G', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(33, '0932/Pdt.G/2015/PA.Pbr', 'CG', 39, 43, 9, 0, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(33, '0932/Pdt.G/2015/PA.Pbr', 'CG', 39, 43, 9, 0, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(34, '0953/Pdt.G/2015/PA.Pbr', 'CG', 39, 35, 5, 0, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(34, '0953/Pdt.G/2015/PA.Pbr', 'CG', 39, 35, 5, 0, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(35, '0958/PdtG/2015/PA.Pbr', 'CG', 32, 33, 5, 1, 'Gagal', 'FG', 'Ditolak', 0, 1);
+	(35, '0958/PdtG/2015/PA.Pbr', 'CG', 32, 33, 5, 1, 'Gagal', 'FG', 'Ditolak', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(36, '0969/Pdt.G/2015/PA.Pbr', 'CG', 30, 33, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(36, '0969/Pdt.G/2015/PA.Pbr', 'CG', 30, 33, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(37, '0979/Pdt.G/2015/PA.Pbr', 'CG', 38, 42, 16, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(37, '0979/Pdt.G/2015/PA.Pbr', 'CG', 38, 42, 16, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(38, '0988/Pdt.G/2015/PA.Pbr', 'CG', 29, 30, 8, 1, 'Gagal', 'FG', 'Dikabulkan', 0, 1);
+	(38, '0988/Pdt.G/2015/PA.Pbr', 'CG', 29, 30, 8, 1, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(39, '0997/Pdt.G/2015/PA.Pbr', 'CG', 32, 38, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(39, '0997/Pdt.G/2015/PA.Pbr', 'CG', 32, 38, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(40, '1010/Pdt.G/2015/PA.Pbr', 'CG', 34, 34, 12, 2, 'Gagal', 'G', 'Dikabulkan', 1, 1);
+	(40, '1010/Pdt.G/2015/PA.Pbr', 'CG', 34, 34, 12, 2, 'Gagal', 'G', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(41, '1012/Pdt.G/2015/PA.Pbr', 'CG', 28, 32, 2, 0, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(41, '1012/Pdt.G/2015/PA.Pbr', 'CG', 28, 32, 2, 0, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(42, '1019/Pdt.G/2015/PA.Pbr', 'CG', 38, 40, 5, 0, 'Berhasil', 'DF', 'Dikabulkan', 0, 1);
+	(42, '1019/Pdt.G/2015/PA.Pbr', 'CG', 38, 40, 5, 0, 'Berhasil', 'DF', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(43, '1024/Pdt.G/2015/PA.Pbr', 'CG', 30, 35, 14, 1, 'Gagal', 'AF', 'Dikabulkan', 0, 1);
+	(43, '1024/Pdt.G/2015/PA.Pbr', 'CG', 30, 35, 14, 1, 'Gagal', 'AF', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(44, '1025/Pdt.G/2015/PA.Pbr', 'CG', 33, 32, 8, 1, 'Gagal', 'AG', 'Dikabulkan', 0, 1);
+	(44, '1025/Pdt.G/2015/PA.Pbr', 'CG', 33, 32, 8, 1, 'Gagal', 'AG', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(45, '1030/Pdt.G/2015/PA.Pbr', 'CG', 30, 35, 14, 1, 'Berhasil', 'AFG', 'Ditolak', 0, 1);
+	(45, '1030/Pdt.G/2015/PA.Pbr', 'CG', 30, 35, 14, 1, 'Berhasil', 'AFG', 'Ditolak', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(46, '1032/Pdt.G/2015/PA.Pbr', 'CG', 41, 46, 21, 2, 'Gagal', 'EG', 'Dikabulkan', 1, 1);
+	(46, '1032/Pdt.G/2015/PA.Pbr', 'CG', 41, 46, 21, 2, 'Gagal', 'EG', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(47, '1053/Pdt.G/2015/PA.Pbr', 'CG', 51, 51, 19, 2, 'Gagal', 'H', 'Ditolak', 1, 1);
+	(47, '1053/Pdt.G/2015/PA.Pbr', 'CG', 51, 51, 19, 2, 'Gagal', 'H', 'Ditolak', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(48, '1067/Pdt.G/2015/PA.Pbr', 'CG', 49, 50, 26, 3, 'Gagal', 'G', 'Dikabulkan', 1, 1);
+	(48, '1067/Pdt.G/2015/PA.Pbr', 'CG', 49, 50, 26, 3, 'Gagal', 'G', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(49, '1068/Pdt.G/2015/PA.Pbr', 'CG', 26, 24, 5, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
+	(49, '1068/Pdt.G/2015/PA.Pbr', 'CG', 26, 24, 5, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(50, '1110/Pdt.G/2015/PA.Pbr', 'CG', 34, 34, 12, 2, 'Gagal', 'G', 'Dikabulkan', 1, 1);
+	(50, '1110/Pdt.G/2015/PA.Pbr', 'CG', 34, 34, 12, 2, 'Gagal', 'G', 'Dikabulkan', 1, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
 	(51, '1112/Pdt.G/2015/PA.Pbr', 'CG', 28, 32, 2, 0, 'Gagal', 'CG', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
@@ -10598,201 +10599,201 @@ INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_data
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
 	(5254, '1464/Pdt.G/2018/PA Pbr', 'CT', 31, 35, 8, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5255, '1465/Pdt.G/2018/PA Pbr', 'CT', 45, 30, 13, 3, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5255, '1465/Pdt.G/2018/PA Pbr', 'CT', 45, 30, 13, 3, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5256, '1466/Pdt.G/2018/PA Pbr', 'CT', 32, 23, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5256, '1466/Pdt.G/2018/PA Pbr', 'CT', 32, 23, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5257, '1467/Pdt.G/2018/PA Pbr', 'CT', 36, 41, 12, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5257, '1467/Pdt.G/2018/PA Pbr', 'CT', 36, 41, 12, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5258, '1468/Pdt.G/2018/PA Pbr', 'CT', 28, 29, 2, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
+	(5258, '1468/Pdt.G/2018/PA Pbr', 'CT', 28, 29, 2, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5259, '1469/Pdt.G/2018/PA Pbr', 'CT', 43, 44, 15, 3, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5259, '1469/Pdt.G/2018/PA Pbr', 'CT', 43, 44, 15, 3, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5260, '1493/Pdt.G/2018/PA Pbr', 'CT', 40, 35, 10, 2, 'Gagal', 'AF', 'Dikabulkan', 0, 0);
+	(5260, '1493/Pdt.G/2018/PA Pbr', 'CT', 40, 35, 10, 2, 'Gagal', 'AF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5261, '1494/Pdt.G/2018/PA Pbr', 'CT', 45, 42, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 0, 0);
+	(5261, '1494/Pdt.G/2018/PA Pbr', 'CT', 45, 42, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5262, '1495/Pdt.G/2018/PA Pbr', 'CT', 37, 30, 10, 2, 'Gagal', 'BFG', 'Dikabulkan', 0, 0);
+	(5262, '1495/Pdt.G/2018/PA Pbr', 'CT', 37, 30, 10, 2, 'Gagal', 'BFG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5263, '1511/Pdt.G/2018/PA Pbr', 'CT', 40, 37, 16, 4, 'Berhasil', 'B', 'Ditolak', 0, 0);
+	(5263, '1511/Pdt.G/2018/PA Pbr', 'CT', 40, 37, 16, 4, 'Berhasil', 'B', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5264, '1512/Pdt.G/2018/PA Pbr', 'CT', 34, 30, 5, 2, 'Gagal', 'G', 'Dikabulkan', 0, 0);
+	(5264, '1512/Pdt.G/2018/PA Pbr', 'CT', 34, 30, 5, 2, 'Gagal', 'G', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5265, '1513/Pdt.G/2018/PA Pbr', 'CT', 47, 45, 23, 4, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5265, '1513/Pdt.G/2018/PA Pbr', 'CT', 47, 45, 23, 4, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5266, '1514/Pdt.G/2018/PA Pbr', 'CT', 26, 24, 4, 0, 'Gagal', 'E', 'Dikabulkan', 0, 0);
+	(5266, '1514/Pdt.G/2018/PA Pbr', 'CT', 26, 24, 4, 0, 'Gagal', 'E', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5267, '1515/Pdt.G/2018/PA Pbr', 'CT', 37, 32, 5, 0, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5267, '1515/Pdt.G/2018/PA Pbr', 'CT', 37, 32, 5, 0, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5268, '1516/Pdt.G/2018/PA Pbr', 'CT', 45, 34, 12, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5268, '1516/Pdt.G/2018/PA Pbr', 'CT', 45, 34, 12, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5269, '1517/Pdt.G/2018/PA Pbr', 'CT', 31, 30, 7, 2, 'Gagal', 'B', 'Dikabulkan', 0, 0);
+	(5269, '1517/Pdt.G/2018/PA Pbr', 'CT', 31, 30, 7, 2, 'Gagal', 'B', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5270, '1540/Pdt.G/2018/PA Pbr', 'CT', 45, 42, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 0, 0);
+	(5270, '1540/Pdt.G/2018/PA Pbr', 'CT', 45, 42, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5271, '1541/Pdt.G/2018/PA Pbr', 'CT', 43, 38, 4, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5271, '1541/Pdt.G/2018/PA Pbr', 'CT', 43, 38, 4, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5272, '1542/Pdt.G/2018/PA Pbr', 'CT', 40, 37, 16, 4, 'Berhasil', 'B', 'Ditolak', 0, 0);
+	(5272, '1542/Pdt.G/2018/PA Pbr', 'CT', 40, 37, 16, 4, 'Berhasil', 'B', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5273, '1543/Pdt.G/2018/PA Pbr', 'CT', 43, 36, 13, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5273, '1543/Pdt.G/2018/PA Pbr', 'CT', 43, 36, 13, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5274, '1544/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 0, 0);
+	(5274, '1544/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5275, '1545/Pdt.G/2018/PA Pbr', 'CT', 21, 22, 5, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5275, '1545/Pdt.G/2018/PA Pbr', 'CT', 21, 22, 5, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5276, '1546/Pdt.G/2018/PA Pbr', 'CT', 24, 23, 7, 1, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5276, '1546/Pdt.G/2018/PA Pbr', 'CT', 24, 23, 7, 1, 'Gagal', 'FG', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5277, '1547/Pdt.G/2018/PA Pbr', 'CT', 41, 38, 11, 4, 'Berhasil', 'F', 'Ditolak', 0, 0);
+	(5277, '1547/Pdt.G/2018/PA Pbr', 'CT', 41, 38, 11, 4, 'Berhasil', 'F', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5278, '1548/Pdt.G/2018/PA Pbr', 'CT', 40, 38, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 0, 0);
+	(5278, '1548/Pdt.G/2018/PA Pbr', 'CT', 40, 38, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5279, '1617/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 0);
+	(5279, '1617/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5280, '1618/Pdt.G/2018/PA Pbr', 'CT', 23, 20, 3, 0, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5280, '1618/Pdt.G/2018/PA Pbr', 'CT', 23, 20, 3, 0, 'Gagal', 'FG', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5281, '1619/Pdt.G/2018/PA Pbr', 'CT', 37, 34, 11, 4, 'Berhasil', 'F', 'Ditolak', 0, 0);
+	(5281, '1619/Pdt.G/2018/PA Pbr', 'CT', 37, 34, 11, 4, 'Berhasil', 'F', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5282, '1620/Pdt.G/2018/PA Pbr', 'CT', 40, 37, 16, 4, 'Berhasil', 'B', 'Ditolak', 0, 0);
+	(5282, '1620/Pdt.G/2018/PA Pbr', 'CT', 40, 37, 16, 4, 'Berhasil', 'B', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5283, '1621/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 0);
+	(5283, '1621/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5284, '1622/Pdt.G/2018/PA Pbr', 'CT', 30, 24, 3, 1, 'Gagal', 'EF', 'Dikabulkan', 0, 0);
+	(5284, '1622/Pdt.G/2018/PA Pbr', 'CT', 30, 24, 3, 1, 'Gagal', 'EF', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5285, '1623/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 0);
+	(5285, '1623/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5286, '1630/Pdt.G/2018/PA Pbr', 'CT', 50, 42, 7, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5286, '1630/Pdt.G/2018/PA Pbr', 'CT', 50, 42, 7, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5287, '1631/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 0);
+	(5287, '1631/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5288, '1653/Pdt.G/2018/PA Pbr', 'CT', 50, 39, 12, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5288, '1653/Pdt.G/2018/PA Pbr', 'CT', 50, 39, 12, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5289, '1654/Pdt.G/2018/PA Pbr', 'CT', 41, 45, 14, 0, 'Gagal', 'B', 'Dikabulkan', 0, 0);
+	(5289, '1654/Pdt.G/2018/PA Pbr', 'CT', 41, 45, 14, 0, 'Gagal', 'B', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5290, '1688/Pdt.G/2018/PA Pbr', 'CT', 37, 26, 5, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5290, '1688/Pdt.G/2018/PA Pbr', 'CT', 37, 26, 5, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5291, '1689/Pdt.G/2018/PA Pbr', 'CT', 46, 39, 13, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5291, '1689/Pdt.G/2018/PA Pbr', 'CT', 46, 39, 13, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5292, '1690/Pdt.G/2018/PA Pbr', 'CT', 42, 42, 15, 3, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5292, '1690/Pdt.G/2018/PA Pbr', 'CT', 42, 42, 15, 3, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5293, '1691/Pdt.G/2018/PA Pbr', 'CT', 40, 35, 10, 2, 'Gagal', 'AF', 'Dikabulkan', 0, 0);
+	(5293, '1691/Pdt.G/2018/PA Pbr', 'CT', 40, 35, 10, 2, 'Gagal', 'AF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5294, '1692/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 7, 1, 'Gagal', 'AH', 'Dikabulkan', 0, 0);
+	(5294, '1692/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 7, 1, 'Gagal', 'AH', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5295, '1693/Pdt.G/2018/PA Pbr', 'CT', 40, 37, 16, 4, 'Berhasil', 'B', 'Ditolak', 0, 0);
+	(5295, '1693/Pdt.G/2018/PA Pbr', 'CT', 40, 37, 16, 4, 'Berhasil', 'B', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5296, '1694/Pdt.G/2018/PA Pbr', 'CT', 47, 45, 23, 4, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5296, '1694/Pdt.G/2018/PA Pbr', 'CT', 47, 45, 23, 4, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5297, '1710/Pdt.G/2018/PA Pbr', 'CT', 28, 26, 4, 0, 'Gagal', 'E', 'Dikabulkan', 0, 0);
+	(5297, '1710/Pdt.G/2018/PA Pbr', 'CT', 28, 26, 4, 0, 'Gagal', 'E', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5298, '1711/Pdt.G/2018/PA Pbr', 'CT', 37, 33, 11, 3, 'Gagal', 'AF', 'Dikabulkan', 0, 0);
+	(5298, '1711/Pdt.G/2018/PA Pbr', 'CT', 37, 33, 11, 3, 'Gagal', 'AF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5299, '1730/Pdt.G/2018/PA Pbr', 'CT', 53, 50, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 0, 0);
+	(5299, '1730/Pdt.G/2018/PA Pbr', 'CT', 53, 50, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5300, '1731/Pdt.G/2018/PA Pbr', 'CT', 23, 20, 3, 1, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5300, '1731/Pdt.G/2018/PA Pbr', 'CT', 23, 20, 3, 1, 'Gagal', 'FG', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5301, '1732/Pdt.G/2018/PA Pbr', 'CT', 33, 30, 2, 0, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5301, '1732/Pdt.G/2018/PA Pbr', 'CT', 33, 30, 2, 0, 'Gagal', 'FG', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5302, '1746/Pdt.G/2018/PA Pbr', 'CT', 32, 23, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5302, '1746/Pdt.G/2018/PA Pbr', 'CT', 32, 23, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5303, '1747/Pdt.G/2018/PA Pbr', 'CT', 36, 41, 12, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5303, '1747/Pdt.G/2018/PA Pbr', 'CT', 36, 41, 12, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5304, '1748/Pdt.G/2018/PA Pbr', 'CT', 43, 40, 16, 4, 'Berhasil', 'B', 'Ditolak', 0, 0);
+	(5304, '1748/Pdt.G/2018/PA Pbr', 'CT', 43, 40, 16, 4, 'Berhasil', 'B', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5305, '1749/Pdt.G/2018/PA Pbr', 'CT', 50, 35, 13, 3, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5305, '1749/Pdt.G/2018/PA Pbr', 'CT', 50, 35, 13, 3, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5306, '1750/Pdt.G/2018/PA Pbr', 'CT', 40, 40, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 0);
+	(5306, '1750/Pdt.G/2018/PA Pbr', 'CT', 40, 40, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5307, '1751/Pdt.G/2018/PA Pbr', 'CT', 24, 23, 7, 1, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5307, '1751/Pdt.G/2018/PA Pbr', 'CT', 24, 23, 7, 1, 'Gagal', 'FG', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5308, '1770/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 0);
+	(5308, '1770/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5309, '1771/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 0);
+	(5309, '1771/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5310, '1805/Pdt.G/2018/PA Pbr', 'CT', 55, 57, 25, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5310, '1805/Pdt.G/2018/PA Pbr', 'CT', 55, 57, 25, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5311, '1806/Pdt.G/2018/PA Pbr', 'CT', 46, 37, 10, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5311, '1806/Pdt.G/2018/PA Pbr', 'CT', 46, 37, 10, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5312, '1842/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5312, '1842/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5313, '1843/Pdt.G/2018/PA Pbr', 'CT', 48, 45, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 0, 0);
+	(5313, '1843/Pdt.G/2018/PA Pbr', 'CT', 48, 45, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5314, '1844/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 0, 0);
+	(5314, '1844/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5315, '1845/Pdt.G/2018/PA Pbr', 'CT', 22, 24, 5, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5315, '1845/Pdt.G/2018/PA Pbr', 'CT', 22, 24, 5, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5316, '1854/Pdt.G/2018/PA Pbr', 'CT', 56, 34, 16, 1, 'Gagal', 'ADF', 'Dikabulkan', 0, 0);
+	(5316, '1854/Pdt.G/2018/PA Pbr', 'CT', 56, 34, 16, 1, 'Gagal', 'ADF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5317, '1855/Pdt.G/2018/PA Pbr', 'CT', 28, 29, 2, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
+	(5317, '1855/Pdt.G/2018/PA Pbr', 'CT', 28, 29, 2, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5318, '1864/Pdt.G/2018/PA Pbr', 'CT', 37, 32, 5, 0, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5318, '1864/Pdt.G/2018/PA Pbr', 'CT', 37, 32, 5, 0, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5319, '1865/Pdt.G/2018/PA Pbr', 'CT', 45, 34, 12, 2, 'Gagal', 'F', 'Ditolak', 0, 0);
+	(5319, '1865/Pdt.G/2018/PA Pbr', 'CT', 45, 34, 12, 2, 'Gagal', 'F', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5320, '1869/Pdt.G/2018/PA Pbr', 'CT', 43, 43, 15, 3, 'Berhasil', 'B', 'Ditolak', 0, 0);
+	(5320, '1869/Pdt.G/2018/PA Pbr', 'CT', 43, 43, 15, 3, 'Berhasil', 'B', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5321, '1885/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 0, 0);
+	(5321, '1885/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5322, '1886/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 0);
+	(5322, '1886/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5323, '1887/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 0);
+	(5323, '1887/Pdt.G/2018/PA Pbr', 'CT', 36, 36, 7, 1, 'Gagal', 'F', 'Ditolak', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5324, '1899/Pdt.G/2018/PA Pbr', 'CT', 37, 34, 11, 4, 'Berhasil', 'F', 'Ditolak', 0, 0);
+	(5324, '1899/Pdt.G/2018/PA Pbr', 'CT', 37, 34, 11, 4, 'Berhasil', 'F', 'Ditolak', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5325, '1900/Pdt.G/2018/PA Pbr', 'CT', 27, 23, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5325, '1900/Pdt.G/2018/PA Pbr', 'CT', 27, 23, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5326, '1901/Pdt.G/2018/PA Pbr', 'CT', 37, 28, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5326, '1901/Pdt.G/2018/PA Pbr', 'CT', 37, 28, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5327, '1902/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5327, '1902/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5328, '1911/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5328, '1911/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5329, '1912/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 0, 0);
+	(5329, '1912/Pdt.G/2018/PA Pbr', 'CT', 35, 33, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5330, '1913/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5330, '1913/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5331, '1927/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 0);
+	(5331, '1927/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5332, '1928/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5332, '1928/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5333, '1929/Pdt.G/2018/PA Pbr', 'CT', 44, 44, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5333, '1929/Pdt.G/2018/PA Pbr', 'CT', 44, 44, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5334, '1937/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 0);
+	(5334, '1937/Pdt.G/2018/PA Pbr', 'CT', 25, 22, 2, 0, 'Gagal', 'A', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5335, '1938/Pdt.G/2018/PA Pbr', 'CT', 48, 45, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 0, 0);
+	(5335, '1938/Pdt.G/2018/PA Pbr', 'CT', 48, 45, 19, 2, 'Gagal', 'DFG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5336, '1939/Pdt.G/2018/PA Pbr', 'CT', 32, 25, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
+	(5336, '1939/Pdt.G/2018/PA Pbr', 'CT', 32, 25, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5337, '1940/Pdt.G/2018/PA Pbr', 'CT', 31, 35, 8, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5337, '1940/Pdt.G/2018/PA Pbr', 'CT', 31, 35, 8, 2, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5338, '1941/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5338, '1941/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5339, '1942/Pdt.G/2018/PA Pbr', 'CT', 32, 25, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
+	(5339, '1942/Pdt.G/2018/PA Pbr', 'CT', 32, 25, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5340, '1943/Pdt.G/2018/PA Pbr', 'CT', 31, 35, 8, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5340, '1943/Pdt.G/2018/PA Pbr', 'CT', 31, 35, 8, 2, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5341, '1952/Pdt.G/2018/PA Pbr', 'CT', 43, 38, 4, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5341, '1952/Pdt.G/2018/PA Pbr', 'CT', 43, 38, 4, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5342, '1953/Pdt.G/2018/PA Pbr', 'CT', 23, 20, 3, 0, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5342, '1953/Pdt.G/2018/PA Pbr', 'CT', 23, 20, 3, 0, 'Gagal', 'FG', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5343, '1957/Pdt.G/2018/PA Pbr', 'CT', 50, 50, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5343, '1957/Pdt.G/2018/PA Pbr', 'CT', 50, 50, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5344, '1958/Pdt.G/2018/PA Pbr', 'CT', 27, 23, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5344, '1958/Pdt.G/2018/PA Pbr', 'CT', 27, 23, 3, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5345, '1959/Pdt.G/2018/PA Pbr', 'CT', 50, 42, 7, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5345, '1959/Pdt.G/2018/PA Pbr', 'CT', 50, 42, 7, 2, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5346, '1972/Pdt.G/2018/PA Pbr', 'CT', 32, 25, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 0);
+	(5346, '1972/Pdt.G/2018/PA Pbr', 'CT', 32, 25, 4, 1, 'Gagal', 'G', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5347, '1973/Pdt.G/2018/PA Pbr', 'CT', 31, 35, 8, 2, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5347, '1973/Pdt.G/2018/PA Pbr', 'CT', 31, 35, 8, 2, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5348, '1974/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 0, 0);
+	(5348, '1974/Pdt.G/2018/PA Pbr', 'CT', 48, 48, 21, 3, 'Gagal', 'FG', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5349, '1975/Pdt.G/2018/PA Pbr', 'CT', 47, 45, 23, 4, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5349, '1975/Pdt.G/2018/PA Pbr', 'CT', 47, 45, 23, 4, 'Gagal', 'F', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5350, '1976/Pdt.G/2018/PA Pbr', 'CT', 27, 27, 8, 1, 'Gagal', 'F', 'Dikabulkan', 0, 0);
+	(5350, '1976/Pdt.G/2018/PA Pbr', 'CT', 27, 27, 8, 1, 'Gagal', 'F', 'Dikabulkan', 0, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5351, '1987/Pdt.G/2018/PA Pbr', 'CT', 34, 32, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 0, 0);
+	(5351, '1987/Pdt.G/2018/PA Pbr', 'CT', 34, 32, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 1, 1);
 INSERT INTO `tbl_dataset` (`id_dataset`, `np_dataset`, `jenis_dataset`, `up_dataset`, `ut_dataset`, `uk_dataset`, `ja_dataset`, `mediasi_dataset`, `alasan_dataset`, `putusan_dataset`, `clustering_dataset`, `use_dataset`) VALUES
-	(5352, '1988/Pdt.G/2018/PA Pbr', 'CT', 37, 35, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 0, 0);
+	(5352, '1988/Pdt.G/2018/PA Pbr', 'CT', 37, 35, 10, 2, 'Gagal', 'EF', 'Dikabulkan', 1, 1);
 /*!40000 ALTER TABLE `tbl_dataset` ENABLE KEYS */;
 
 
