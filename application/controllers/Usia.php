@@ -48,7 +48,7 @@ class Usia extends CI_Controller {
 	}	
 	public function usia_tambah()
     {
-		$_POST['kd_usia'] = "0";
+		$_POST['kd_usia_eksis'] = "0";
 		$this->load->view("v_admin_header");
         $this->load->view("v_usia_add", $_POST);
 		$this->load->view("v_main_footer");

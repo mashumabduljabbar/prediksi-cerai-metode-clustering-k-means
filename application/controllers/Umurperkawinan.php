@@ -48,7 +48,7 @@ class Umurperkawinan extends CI_Controller {
 	}	
 	public function umurperkawinan_tambah()
     {
-		$_POST['kd_umurperkawinan'] = "0";
+		$_POST['kd_umurperkawinan_eksis'] = "0";
 		$this->load->view("v_admin_header");
         $this->load->view("v_umurperkawinan_add", $_POST);
 		$this->load->view("v_main_footer");

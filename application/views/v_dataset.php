@@ -67,6 +67,7 @@ $('#dataDataset').DataTable({
 				{ "data": "alasandataset" },
 				{ "data": "putusan_dataset" }
 			],
+			"ordering": false,
 			columnDefs: [
 				   {
 				   targets: [9],
