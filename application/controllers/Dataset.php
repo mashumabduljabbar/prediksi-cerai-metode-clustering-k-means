@@ -36,7 +36,7 @@ CONCAT(a.ut_dataset,' Tahun') as utdataset,
 CONCAT(a.uk_dataset,' Tahun') as ukdataset,
 CONCAT(a.ja_dataset,' Anak') as jadataset,
 CONCAT(CHAR_LENGTH(a.alasan_dataset),' Alasan') as alasandataset
-from tbl_dataset a order by np_dataset ASC
+from tbl_dataset a order by id_dataset ASC
         )temp";
 		
         $primaryKey = 'id_dataset';
